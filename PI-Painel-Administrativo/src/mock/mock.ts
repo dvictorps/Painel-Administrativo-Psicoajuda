@@ -189,3 +189,29 @@ export const statusData = [
 
     },
 ]
+
+export const adminData = [
+    {
+        id: 1,
+        name: 'Gabriel Paulo',
+        username: 'vsp',
+        cadastro: '18/05/2022',
+        role: 'Moderador'
+    },
+    {
+        id: 2,
+        name: 'Marcos Antônio',
+        username: 'asd',
+        cadastro: '18/05/2022',
+        role: 'Moderador'
+
+    },
+    {
+        id: 3,
+        name: 'Isaac Marra',
+        username: 'wer',
+        cadastro: '18/05/2022',
+        role: 'Administrador'
+
+    },
+]

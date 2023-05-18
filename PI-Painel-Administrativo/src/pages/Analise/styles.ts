@@ -23,11 +23,10 @@ export const H2Styled = styled('h2', {
 
 
 export const BodyContainer = styled('div', {
-    diisplay: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignContent: 'center',
     justifyItems: 'center',
+    display: 'flex',
     alignItems: 'center',
     '@lg': {
         textAlign: 'unset'

@@ -24,11 +24,12 @@ import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { IconStyled } from '../IconStyled';
 import { useScreenSize } from '../../utils/useScreenSize';
 import { BreakpointsEnum } from '../../enums/breakpoints';
+import { useNavigate } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
-
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+export const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     open?: boolean;
 }>(({ theme, open }) => ({
     flexGrow: 1,
@@ -108,6 +109,11 @@ export default function PersistentDrawerLeft({ children }) {
             icon: <AppRegistrationIcon />,
             href: '/registros'
         },
+        {
+            label: "Painel",
+            icon: <IconStyled name='MdDashboard' />,
+            href: '/painel'
+        },
 
     ]
 
@@ -129,10 +135,7 @@ export default function PersistentDrawerLeft({ children }) {
                         </IconButton>
                         <ToolbarContent>
                             <ButtonStyled>
-                                <IconButton>
-                                    <AccountCircleIcon />
-                                </IconButton>
-                                <IconButton>
+                                <IconButton href="/login">
                                     <LogoutIcon />
                                 </IconButton>
                             </ButtonStyled>
@@ -157,7 +160,7 @@ export default function PersistentDrawerLeft({ children }) {
                 <DrawerHeader style={{ gap: '0.5rem' }}>
                     <SettingsSuggestIcon fontSize='large' />
                     <Typography variant="h5" fontFamily="Open Sans Light" >
-                        Dashboard
+                        Psicoajuda
                     </Typography>
                     <IconButton onClick={handleDrawerClose}>
                         <MenuIcon />
