@@ -1,5 +1,5 @@
 import { UserCard } from "../../components/UserCard"
-import { Container, CardContainer, SearchContainer, PaginationContainer, SelectWrapper } from "./styles"
+import { Container, CardContainer, SearchContainer, PaginationContainer, SelectWrapper, H1Styled } from "./styles"
 import { usersData, statusData } from "../../mock/mock"
 import TextField from '@mui/material/TextField';
 import { IconStyled } from "../../components/IconStyled";
@@ -42,7 +42,6 @@ export default function Registros() {
             return newArray
         }
     }
-
 
     const [currentPage, setPage] = useState(1)
     const handlePaginationChange = (event: React.ChangeEvent<unknown>, page: number) => {
@@ -100,6 +99,7 @@ export default function Registros() {
 
     return (
         <Container>
+            <H1Styled>Registros</H1Styled>
             <SearchContainer>
                 <IconStyled name="BiSearch" />
                 <TextField id="input-with-sx" label="Pesquisar" variant="standard" fullWidth onChange={event => {

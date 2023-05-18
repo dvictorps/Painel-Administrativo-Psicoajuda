@@ -4,6 +4,12 @@ export const Container = styled('div', {
     width: '100%',
 })
 
+
+export const H1Styled = styled('h1', {
+    fontFamily: 'Open Sans Light',
+    fontWeight: 'normal'
+})
+
 export const CardContainer = styled('div', {
     display: 'flex',
     gap: '1rem',

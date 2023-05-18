@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -7,7 +6,6 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ListItem from '@mui/material/ListItem';
@@ -15,17 +13,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import LogoutIcon from '@mui/icons-material/Logout';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AppBarStyled, ButtonStyled, ToolbarContent } from './styles';
 import HomeIcon from '@mui/icons-material/Home';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import DataUsageIcon from '@mui/icons-material/DataUsage';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { IconStyled } from '../IconStyled';
 import { useScreenSize } from '../../utils/useScreenSize';
 import { BreakpointsEnum } from '../../enums/breakpoints';
-import { useNavigate } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useState } from 'react';
+
 
 const drawerWidth = 240;
 
@@ -73,13 +69,11 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
 }));
 
 export default function PersistentDrawerLeft({ children }) {
-    const theme = useTheme();
 
     const windowSize = useScreenSize()
 
@@ -88,7 +82,7 @@ export default function PersistentDrawerLeft({ children }) {
         if (windowSize.innerWidth > BreakpointsEnum.md) return true
     }
 
-    const [open, setOpen] = React.useState(getSizeForMobile());
+    const [open, setOpen] = useState(getSizeForMobile());
 
     const handleDrawerOpen = () => {
         setOpen(true);
