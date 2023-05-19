@@ -79,9 +79,6 @@ export function UserCard({ fullwidth, userData }: UserCardProps) {
         if (windowSize.innerWidth > BreakpointsEnum.md) return false
     }
 
-
-
-
     return (
         <Container fullwidth={fullwidth}>
             <CardContainer>
