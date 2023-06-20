@@ -3,8 +3,27 @@ import CssBaseline from '@mui/material/CssBaseline';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { Button, TextField } from "@mui/material";
 import { IconStyled } from "../../components/IconStyled";
+import { api } from "../../api/api";
+import { useEffect } from "react"
 
 export default function Login() {
+
+    useEffect(() => {
+        api.post('/user', {
+            name: "Lucass",
+            email: "lucass.oliveira@gmail.com",
+            senha: "1234ABCD",
+            avatar: "https://cdn.pixabay.com/photo/2014/04/02/16/23/tree-307149_1280.png"
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        console.log('entrou na requisição')
+    }, [])
 
     return (
         <>
